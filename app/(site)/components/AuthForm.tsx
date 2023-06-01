@@ -54,15 +54,15 @@ const AuthForm = () => {
         ...data,
         redirect: false,
       }))
-      // .then((callback) => {
-      //   if (callback?.error) {
-      //     toast.error('Invalid credentials!');
-      //   }
+      .then((callback) => {
+        if (callback?.error) {
+          toast.error('Invalid credentials!');
+        }
 
-      //   if (callback?.ok) {
-      //     router.push('/conversations')
-      //   }
-      // })
+        if (callback?.ok) {
+          router.push('/conversations')
+        }
+      })
       .catch(() => toast.error('Something went wrong!'))
       .finally(() => setIsLoading(false))
     }
@@ -81,9 +81,9 @@ const AuthForm = () => {
           router.push('/users')
         }
 
-        // if (callback?.ok) {
-        //   router.push('/conversations')
-        // }
+        if (callback?.ok) {
+          router.push('/conversations')
+        }
       })
       .finally(() => setIsLoading(false))
     }
@@ -102,9 +102,9 @@ const AuthForm = () => {
           toast.success('Logged in !')
         }
 
-        // if (callback?.ok) {
-        //   router.push('/conversations')
-        // }
+        if (callback?.ok) {
+          router.push('/conversations')
+        }
       })
       .finally(() => setIsLoading(false));
   }
