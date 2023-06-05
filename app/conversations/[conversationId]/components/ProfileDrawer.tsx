@@ -10,7 +10,6 @@ import useOtherUser from '@/app/hooks/useOtherUser';
 import useActiveList from '@/app/hooks/useActiveList';
 
 import Avatar from '@/app/components/Avatar';
-import Modal from '@/app/components/modals/Modal';
 import AvatarGroup from '@/app/components/AvatarGroup';
 import ConfirmModal from './ConfirmModal';
 
@@ -100,6 +99,9 @@ const ProfileDrawer: React.FC<ProfileDrawerProps> = ({
                       <div className='flex flex-col items-center'>
                         <div className='mb-2'>
                           {data.isGroup ? <AvatarGroup users={data.users} /> : <Avatar user={otherUser} />}
+                        </div>
+                        <div>
+                          {title}
                         </div>
                         <div className="text-sm text-gray-500">
                           {statusText}
